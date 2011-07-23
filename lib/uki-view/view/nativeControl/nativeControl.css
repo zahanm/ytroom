@@ -1,0 +1,28 @@
+.uki-nc-select {
+    margin: 0;
+}
+
+
+.uki-nc-text {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+.uki-nc-text__input {
+    margin: 0;
+    width: 100%;
+    *width: auto;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.uki-nc-text_with-placeholder {
+    position: relative;
+}
+
+.uki-nc-text__placholder {
+    position: absolute;
+    color: #888;
+}

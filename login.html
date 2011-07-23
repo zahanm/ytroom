@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Yt Room: Login</title>
+    <script src="http://connect.facebook.net/en_US/all.js"></script>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <div id="loginWindow">
+      <h3>Please login to Facebook to use Yt Room</h3>
+      <fb:login-button width="200" perms="user_about_me">
+      </fb:login-button>
+    </div>
+    <script>
+      FB.init({appId: '250242251671163', status: false, cookie: true, xfbml: true });
+      FB.Event.subscribe('auth.login', function(response) {
+        location.href = './';
+      });
+      FB.getLoginStatus(function(r) {
+        if (r.perms) {
+          location.href = './index.html';
+        }
+      });
+    </script>
+  </body>
+</html>
