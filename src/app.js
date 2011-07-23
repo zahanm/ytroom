@@ -7,12 +7,13 @@ dom.createStylesheet(__requiredCss);
 
 window.startApp = function() {
   FB.api(
-      '/me',
-      { fields: ['first_name', 'id', 'username'] },
-      function(me) {
-        document.getElementById('starter').innerHTML
-          = 'Hi, ' + me.first_name + ' and ' + me.username
-            + ' my id is ' + me.id;
+      '/me/friends',
+      { fields: ['first_name', 'name', 'id'], limit: 30 },
+      function(friends) {
+        var lines = friends['data'].map(function(f) {
+                return f.name + " | id: " + f.id;
+              });
+        document.getElementById('starter').innerHTML = lines.join('<br/>');
       }
   );
 };
