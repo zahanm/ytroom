@@ -1,7 +1,8 @@
 
 requireCss('./index.css');
 
-var dom = require('../lib/uki-core/dom');
+var dom = require('../lib/uki-core/dom'),
+    AsyncGet = require('../lib/asyncget').AsyncGet;
 
 dom.createStylesheet(__requiredCss);
 
@@ -16,5 +17,4 @@ window.startApp = function() {
         document.getElementById('starter').innerHTML = lines.join('<br/>');
       }
   );
-  var AsyncGet = require('../lib/asyncget').AsyncGet;
 };
