@@ -16,4 +16,5 @@ window.startApp = function() {
         document.getElementById('starter').innerHTML = lines.join('<br/>');
       }
   );
+  var AsyncGet = require('../lib/asyncget').AsyncGet;
 };
