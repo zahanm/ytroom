@@ -10,7 +10,12 @@
     </div>
 		<script src="http://connect.facebook.net/en_US/all.js"></script>
     <script>
-      FB.init({appId: '250242251671163', status: false, cookie: true, xfbml: false });
+      FB.init({
+				appId: '250242251671163',
+				status: true,
+				cookie: true,
+				xfbml: false
+			});
       FB.getLoginStatus(function(r) {
         if (!r.perms) {
           location.href = './login.html';
