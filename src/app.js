@@ -1,9 +1,9 @@
 
-requireCss('./index.css');
+requireCss('./css/index.css');
 
-var dom = require('../lib/uki-core/dom'),
+var dom = require('../extlib/uki-core/dom'),
 
-    ytdata = require('./ytdata');
+    ytdata = require('./lib/ytdata');
 
 dom.createStylesheet(__requiredCss);
 
@@ -19,5 +19,5 @@ window.startApp = function() {
 
 window.onYouTubePlayerReady = function() {
   var player = document.getElementById('ytplayer');
-  player && player.playVideo();
+  player && player.pauseVideo();
 };

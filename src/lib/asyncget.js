@@ -1,6 +1,6 @@
 
-var fun = require('./uki-core/function'),
-    utils = require('./uki-core/utils'),
+var fun = require('../../extlib/uki-core/function'),
+    utils = require('../../extlib/uki-core/utils'),
 
     asyncget = exports;
 

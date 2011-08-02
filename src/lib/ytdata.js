@@ -1,5 +1,5 @@
 
-var asyncget = require('../lib/asyncget'),
+var asyncget = require('./asyncget'),
     
     ytdata = exports;
 
