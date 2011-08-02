@@ -2,11 +2,15 @@
 requireCss('./index.css');
 
 var dom = require('../lib/uki-core/dom'),
-    AsyncGet = require('../lib/asyncget').AsyncGet;
+
+    ytdata = require('./ytdata');
 
 dom.createStylesheet(__requiredCss);
 
 window.startApp = function() {
+  ytdata.search('Ellie Goulding', function(r) {
+    console.log(r);
+  });
   var params = { allowScriptAccess: "always" };
   var atts = { id: "ytplayer" };
   swfobject.embedSWF("http://www.youtube.com/e/0NKUpo_xKyQ?enablejsapi=1&playerapiid=ytplayer",
