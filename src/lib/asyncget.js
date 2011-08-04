@@ -24,7 +24,7 @@ asyncget.get = function(url, data, cb) {
 
   global.asyncget._callbacks['f' + g ] = function(response) {
     cb && cb(response);
-    delete global.asyncget._callbacks[g];
+    delete global.asyncget._callbacks['f' + g];
     script.parentNode.removeChild(script);
   };
 
