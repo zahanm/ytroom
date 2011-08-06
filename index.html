@@ -23,12 +23,12 @@
 				xfbml: false
 			});
       FB.getLoginStatus(function(r) {
-        if (!r.session) {
-          location.href = './login.html';
-        } else {
+        if (r.authResponse || r.session) {
           startApp();
+        } else {
+          location.href = './login.html';
         }
-      });
+      }, true);
     </script>
   </body>
 </html>
