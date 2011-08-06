@@ -23,7 +23,7 @@
 				xfbml: false
 			});
       FB.getLoginStatus(function(r) {
-        if (!r.authResponse) {
+        if (!r.session) {
           location.href = './login.html';
         } else {
           startApp();

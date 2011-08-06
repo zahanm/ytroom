@@ -1,7 +1,7 @@
 
 requireCss('./css/index.css');
 
-var dom = require('../extlib/uki-core/dom'),
+var dom = require('./extlib/uki-core/dom'),
 
     ytdata = require('./lib/ytdata');
 
