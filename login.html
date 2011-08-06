@@ -23,7 +23,7 @@
         location.href = './index.html';
       });
       FB.getLoginStatus(function(r) {
-        if (r.perms) {
+        if (r.authResponse) {
           location.href = './index.html';
         }
       });

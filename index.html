@@ -14,7 +14,7 @@
 		<script
 			src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"
 			type="text/javascript"></script>
-		<script src="/src/app.js" charset="utf-8" type="text/javascript"></script>
+		<script src="/client_src/app.js" charset="utf-8" type="text/javascript"></script>
     <script>
       FB.init({
 				appId: '250242251671163',
@@ -23,7 +23,7 @@
 				xfbml: false
 			});
       FB.getLoginStatus(function(r) {
-        if (!r.perms) {
+        if (!r.authResponse) {
           location.href = './login.html';
         } else {
           startApp();

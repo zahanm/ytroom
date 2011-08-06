@@ -13,7 +13,8 @@ window.startApp = function() {
   });
   var params = { allowScriptAccess: "always" };
   var atts = { id: "ytplayer" };
-  swfobject.embedSWF("http://www.youtube.com/e/0NKUpo_xKyQ?enablejsapi=1&playerapiid=ytplayer",
+  swfobject.embedSWF(
+    "http://www.youtube.com/e/0NKUpo_xKyQ?enablejsapi=1&playerapiid=ytplayer",
     "ytplayer", "425", "356", "8", null, null, params, atts);
 };
 
