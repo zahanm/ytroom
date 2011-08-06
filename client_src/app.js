@@ -9,10 +9,10 @@ dom.createStylesheet(__requiredCss);
 
 window.startApp = function() {
   ytdata.search('Ellie Goulding', function(results) {
+    // DEBUG
     results.forEach(function(result) {
       console.log('title: ', result.title);
       console.log('url: ', result.embedurl);
-      console.log();
     });
   });
   var params = { allowScriptAccess: "always" };
