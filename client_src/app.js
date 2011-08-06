@@ -8,8 +8,12 @@ var dom = require('./extlib/uki-core/dom'),
 dom.createStylesheet(__requiredCss);
 
 window.startApp = function() {
-  ytdata.search('Ellie Goulding', function(r) {
-    console.log(r);
+  ytdata.search('Ellie Goulding', function(results) {
+    results.forEach(function(result) {
+      console.log('title: ', result.title);
+      console.log('url: ', result.embedurl);
+      console.log();
+    });
   });
   var params = { allowScriptAccess: "always" };
   var atts = { id: "ytplayer" };
