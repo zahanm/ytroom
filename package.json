@@ -1,15 +1,16 @@
 {
-  'name': 'ytroom',
-  'version': '0.0.1-alpha',
-  'description': 'A music sharing experience',
-  'main': 'ytroom.js',
-  'repository': {
-    'type': 'git',
-    'url': 'http://github.com/zahanm/ytroom.git'
+  "name": "ytroom",
+  "version": "0.0.1-alpha",
+  "description": "A music sharing experience",
+  "main": "ytroom.js",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/zahanm/ytroom.git"
   },
-  'dependencies': {
-    'express': '>=2.4',
-    'socket.io': '>=0.7'
+  "dependencies": {
+    "express": ">=2.4",
+    "socket.io": ">=0.7",
+    "ukijs": ">=0.4"
   },
-  'private': true
+  "private": true
 }

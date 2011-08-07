@@ -1,11 +1,7 @@
 
-requireCss('./css/index.css');
-
 var dom = require('./extlib/uki-core/dom'),
 
     ytdata = require('./lib/ytdata');
-
-dom.createStylesheet(__requiredCss);
 
 window.startApp = function() {
   ytdata.search('Ellie Goulding', function(results) {
