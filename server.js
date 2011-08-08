@@ -18,6 +18,11 @@ server.configure('dev', function() {
   server.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 });
 
+server.get('/', function(req, res) {
+  res.send('Hello World!');
+});
+
 server.listen(8080);
 
 console.log('Listening at http://localhost:8080/');
+
