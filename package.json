@@ -9,8 +9,7 @@
   },
   "dependencies": {
     "express": ">=2.4",
-    "socket.io": ">=0.7",
-    "ukijs": ">=0.4"
+    "socket.io": ">=0.7"
   },
   "private": true
 }

@@ -1,7 +1,25 @@
 
 var dom = require('./extlib/uki-core/dom'),
 
+    ytroomconsts = require('../secure/ytroom_constants'),
     ytdata = require('./lib/ytdata');
+
+(function() {
+  FB.init({
+  	appId: ytroomconsts.FB_APP_ID,
+  	status: true,
+  	cookie: true,
+  	xfbml: false
+  });
+
+  FB.getLoginStatus(function(r) {
+    if (r.authResponse || r.session) {
+      startApp();
+    } else {
+      location.href = './login.html';
+    }
+  }, true);
+})();
 
 window.startApp = function() {
   ytdata.search('Ellie Goulding', function(results) {

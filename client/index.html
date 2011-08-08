@@ -16,20 +16,5 @@
 			src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"
 			type="text/javascript"></script>
 		<script src="/app.js" charset="utf-8" type="text/javascript"></script>
-    <script>
-      FB.init({
-				appId: '250242251671163',
-				status: true,
-				cookie: true,
-				xfbml: false
-			});
-      FB.getLoginStatus(function(r) {
-        if (r.authResponse || r.session) {
-          startApp();
-        } else {
-          location.href = './login.html';
-        }
-      }, true);
-    </script>
   </body>
 </html>

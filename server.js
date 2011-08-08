@@ -18,6 +18,6 @@ server.configure('dev', function() {
   server.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 });
 
-server.listen(1337);
+server.listen(8080);
 
-console.log('Listening at http://localhost:1337/');
+console.log('Listening at http://localhost:8080/');
