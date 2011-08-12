@@ -12,21 +12,6 @@
       </fb:login-button>
     </div>
 		<script src="http://connect.facebook.net/en_US/all.js"></script>
-    <script>
-      FB.init({
-				appId: '250242251671163',
-				status: true,
-				cookie: true,
-				xfbml: true
-			});
-      FB.Event.subscribe('auth.login', function(r) {
-        location.href = './index.html';
-      });
-      FB.getLoginStatus(function(r) {
-        if (r.authResponse || r.session) {
-          location.href = './index.html';
-        }
-      });
-    </script>
+    <script src="/require/login" type="text/javascript" charset="utf-8"></script>
   </body>
 </html>

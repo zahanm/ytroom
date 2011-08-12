@@ -1,5 +1,5 @@
 
-var constants = require('./secure/constants');
+var constants = require('../secure/constants');
 
 (function() {
   FB.init({
@@ -10,11 +10,11 @@ var constants = require('./secure/constants');
 		oauth: true
 	});
   FB.Event.subscribe('auth.login', function(r) {
-    location.href = './index.html';
+    location.href = './';
   });
   FB.getLoginStatus(function(r) {
     if (r.authResponse || r.session) {
-      location.href = './index.html';
+      location.href = './';
     }
   });
 })();
