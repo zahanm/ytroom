@@ -12,8 +12,9 @@ server.configure(function() {
   server.use(express.methodOverride());
   server.use(server.router);
   server.use(express.static(path.resolve(__dirname,'../client')));
-  server.use(requireServer.connect({ 
-    path: path.resolve(__dirname, '../client'),
+  server.use(requireServer.connect({
+    root: 'require',
+    path: path.resolve(__dirname,'../client'),
     port: 8080,
     host: 'localhost'
   }));
