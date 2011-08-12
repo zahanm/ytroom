@@ -1,15 +1,16 @@
 
 var dom = require('./extlib/uki-core/dom'),
 
-    ytroomconsts = require('../secure/ytroom_constants'),
+    constants = require('../secure/constants'),
     ytdata = require('./lib/ytdata');
 
 (function() {
   FB.init({
-  	appId: ytroomconsts.FB_APP_ID,
+  	appId: constants.DEV_FB_APP_ID,
   	status: true,
   	cookie: true,
-  	xfbml: false
+  	xfbml: false,
+  	oauth: true
   });
 
   FB.getLoginStatus(function(r) {

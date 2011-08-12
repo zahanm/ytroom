@@ -10,7 +10,9 @@
   "dependencies": {
     "express": ">=2.4",
     "socket.io": ">=0.7",
-    "simpledb": ">=0.0.6"
+    "simpledb": ">=0.0.6",
+    "mustache": ">=0.3",
+    "require": ">=0.4"
   },
   "private": true
 }

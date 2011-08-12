@@ -9,7 +9,7 @@ var fun = require('../extlib/uki-core/function'),
  * Just use the get() method
  */
 asyncget.get = function(url, data, cb) {
-  var g = global.asyncget._guid++ ;
+  var g = window.asyncget._guid++ ;
   utils.extend(data, { callback: 'asyncget._callbacks.f' + g } );
 
   var params = '';
@@ -22,9 +22,9 @@ asyncget.get = function(url, data, cb) {
 
   var script = document.createElement('script');
 
-  global.asyncget._callbacks['f' + g ] = function(response) {
+  window.asyncget._callbacks['f' + g ] = function(response) {
     cb && cb(response);
-    delete global.asyncget._callbacks['f' + g];
+    delete window.asyncget._callbacks['f' + g];
     script.parentNode.removeChild(script);
   };
 
@@ -40,6 +40,6 @@ function addParam (params, key, data) {
 }
 
 // Global static variables
-global.asyncget = {};
-global.asyncget._guid = 1;
-global.asyncget._callbacks = {};
+window.asyncget = {};
+window.asyncget._guid = 1;
+window.asyncget._callbacks = {};

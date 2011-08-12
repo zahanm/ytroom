@@ -1,5 +1,5 @@
 // high level browser objects
-exports.root    = global;
+exports.root    = window;
 exports.doc     = exports.root.document || {};
 exports.docElem = exports.doc.documentElement;
 exports.nav     = exports.root.navigator || {};

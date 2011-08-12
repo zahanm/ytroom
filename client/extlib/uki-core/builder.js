@@ -9,7 +9,7 @@ var Builder = fun.newClass({
     * @constructor
     */
     init: function(ns) {
-        this.namespaces = ns || [global];
+        this.namespaces = ns || [window];
         this.build = fun.bind(this.build, this);
         this._stack = 0;
     },
@@ -85,7 +85,7 @@ function setDefault(builder) {
 function withBuilder(builder, callback, context) {
     var oldBuilder = defaultBuilder;
     setDefault(builder);
-    var result = callback.call(context || global);
+    var result = callback.call(context || window);
     setDefault(oldBuilder);
     return result;
 }

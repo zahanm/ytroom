@@ -296,14 +296,14 @@ fun.debounce = function(fn, timeout) {
     return timer(fn, timeout, true);
 };
 
-if (global.postMessage) {
+if (window.postMessage) {
     var deferMessage = "uki-defer-" + env.expando,
         listening = false,
         deferQueue = [];
 
     fun.defer = function(callback) {
         if (!listening) {
-            global.addEventListener('message', function(e) {
+            window.addEventListener('message', function(e) {
                 if (e.data == deferMessage) {
                     e.stopPropagation();
                     var queue = deferQueue;
@@ -314,11 +314,11 @@ if (global.postMessage) {
             listening = true;
         }
         deferQueue.push(callback);
-        global.postMessage(deferMessage, "*");
+        window.postMessage(deferMessage, "*");
     };
 } else {
     fun.defer = function(callback) {
-        return global.setTimeout(callback, 0);
+        return window.setTimeout(callback, 0);
     };
 }
 

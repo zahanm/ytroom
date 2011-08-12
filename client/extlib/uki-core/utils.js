@@ -235,7 +235,7 @@ utils.dasherize = function(string) {
 utils.path2obj = function(path, context) {
     var parts = path.split('.');
 
-    context = context || global;
+    context = context || window;
 
     for (var i = 0, l = parts.length; context && i < l; i++) {
         context = context[parts[i]];
