@@ -6,11 +6,11 @@ var dom = require('./extlib/uki-core/dom'),
 
 (function() {
   FB.init({
-  	appId: constants.DEV_FB_APP_ID,
-  	status: true,
-  	cookie: true,
-  	xfbml: false,
-  	oauth: true
+    appId: constants.DEV_FB_APP_ID,
+    status: true,
+    cookie: true,
+    xfbml: false,
+    oauth: true
   });
 
   FB.getLoginStatus(function(r) {
