@@ -13,7 +13,7 @@ ytdata.search = function(query, callback) {
     orderBy: 'viewCount',
     paid_content: 'false',
     'max-results': 10,
-    prettyprint: true,
+    prettyprint: true, // TODO revert once debugging isn't needed :)
     alt: 'json-in-script',
     restriction: 'US',
     format: 5 // embeddable on 3rd party sites

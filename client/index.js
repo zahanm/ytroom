@@ -1,13 +1,18 @@
 
 var dom = require('./extlib/uki-core/dom'),
+    find  = require("./extlib/uki-core/selector").find,
+    builder = require('./extlib/uki-core/builder').build,
 
-    constants = require('../secure/constants'),
-    ytdata = require('./lib/ytdata');
+    views = require('./view/views'),
+
+    constants = require('./secure/constants'),
+    ytdata = require('./lib/ytdata'),
+    ytplayer = require('./lib/ytplayer');
 
 (function() {
   FB.init({
     appId: constants.DEV_FB_APP_ID,
-    status: true,
+    status: false,
     cookie: true,
     xfbml: false,
     oauth: true
@@ -29,12 +34,11 @@ window.startApp = function() {
       console.log('title: ', result.title);
       console.log('url: ', result.embedurl);
     });
+    ytplayer.makePlayer(results[0].embedurl);
   });
-  var params = { allowScriptAccess: "always" };
-  var atts = { id: "ytplayer" };
-  swfobject.embedSWF(
-    "http://www.youtube.com/e/0NKUpo_xKyQ?enablejsapi=1&playerapiid=ytplayer",
-    "ytplayer", "425", "356", "8", null, null, params, atts);
+  builder([
+    { view: 'Searchlist', rect: '0 0 300 200', anchors: 'left top', background: 'theme(panel)' }
+  ]).attach(document.getElementById('searcher'));
 };
 
 window.onYouTubePlayerReady = function() {

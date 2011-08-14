@@ -1,10 +1,10 @@
 
-var constants = require('../secure/constants');
+var constants = require('./secure/constants');
 
 (function() {
   FB.init({
     appId: constants.DEV_FB_APP_ID,
-    status: true,
+    status: false,
     cookie: true,
     xfbml: true,
     oauth: true
