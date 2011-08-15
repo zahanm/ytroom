@@ -1,4 +1,4 @@
-requireCss('uki-view/uki.css');
+requireCss(__dirname, 'uki-view/uki.css');
 
 var view = require('./uki-core/view'),
     utils = require('./uki-core/utils'),

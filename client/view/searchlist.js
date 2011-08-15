@@ -20,5 +20,5 @@ var Searchlist = view.newClass('Searchlist', Container, {
     ]).appendTo(this);
   }
 });
-console.log('reqd');
+
 exports.Searchlist = Searchlist;

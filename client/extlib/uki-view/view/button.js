@@ -1,4 +1,4 @@
-requireCss('./button/button.css');
+requireCss(__dirname, './button/button.css');
 
 var fun  = require('../../uki-core/function'),
     view = require('../../uki-core/view'),

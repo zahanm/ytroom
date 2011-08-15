@@ -377,7 +377,7 @@ var Base = view.newClass('Base', {
 
 function initTextSelectable() {
     initTextSelectable = fun.FT;
-    dom.createStylesheet(requireText('base/textSelectable.css'));
+    requireCss(__dirname, 'base/textSelectable.css');
 }
 
 Base.prototype.on = Base.prototype.addListener;

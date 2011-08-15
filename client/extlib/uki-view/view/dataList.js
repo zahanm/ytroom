@@ -1,4 +1,4 @@
-requireCss('./dataList/dataList.css');
+requireCss(__dirname, './dataList/dataList.css');
 
 var fun   = require('../../uki-core/function'),
     utils = require('../../uki-core/utils'),

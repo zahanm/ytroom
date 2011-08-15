@@ -1,4 +1,4 @@
-requireCss('./nativeControl/nativeControl.css');
+requireCss(__dirname, './nativeControl/nativeControl.css');
 
 var fun   = require('../../uki-core/function'),
     view  = require('../../uki-core/view'),
