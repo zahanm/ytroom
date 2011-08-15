@@ -1,5 +1,7 @@
-requireCss = requireText = function() { return true; };
-var dom = require('./extlib/uki-core/dom'),
+
+var cssloader = require('./lib/cssloader'),
+
+    dom = require('./extlib/uki-core/dom'),
     find  = require("./extlib/uki-core/selector").find,
     builder = require('./extlib/uki-core/builder').build,
 
@@ -26,6 +28,8 @@ var dom = require('./extlib/uki-core/dom'),
     }
   }, true);
 })();
+
+// --- App startup
 
 window.startApp = function() {
   ytdata.search('Ellie Goulding', function(results) {

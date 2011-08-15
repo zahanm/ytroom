@@ -9,5 +9,3 @@ utils.extend(view,
 
 // register view as default search path for views
 builder.namespaces.unshift(view);
-
-console.log(__dirname);

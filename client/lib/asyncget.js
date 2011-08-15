@@ -10,7 +10,7 @@ var fun = require('../extlib/uki-core/function'),
  */
 asyncget.get = function(url, data, cb) {
   var g = window.asyncget._guid++ ;
-  utils.extend(data, { callback: 'asyncget._callbacks.f' + g } );
+  utils.extend(data || {}, { callback: 'asyncget._callbacks.f' + g } );
 
   var params = '';
   utils.forEach(data, function(v, k) {
@@ -30,6 +30,14 @@ asyncget.get = function(url, data, cb) {
 
   script.src = url;
   document.getElementsByTagName('head')[0].appendChild(script);
+};
+
+asyncget.getCSS = function(url) {
+  var link = document.createElement('link');
+  link.type = 'text/css';
+  link.rel = 'stylesheet';
+  link.href = url;
+  document.getElementsByTagName('head')[0].appendChild(link);
 };
 
 // --- utility functions

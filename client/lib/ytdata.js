@@ -19,7 +19,6 @@ ytdata.search = function(query, callback) {
     format: 5 // embeddable on 3rd party sites
   };
   asyncget.get('https://gdata.youtube.com/feeds/api/videos', options, function(r) {
-    console && console.log(r); // DEBUG
     var results = ytdata.parseResults(r);
     callback && callback(results);
   });

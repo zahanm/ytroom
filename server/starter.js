@@ -22,10 +22,6 @@ server.configure('dev', function() {
   server.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 });
 
-// server.get('/*.js', static_require.getHandler({
-//   searchPaths: [ path.resolve(__dirname,'../client') ]
-// }));
-
 server.listen(8080);
 
 console.log('Listening at http://localhost:8080/');
