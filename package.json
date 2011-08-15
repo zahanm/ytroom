@@ -11,9 +11,7 @@
     "express": ">=2.4",
     "socket.io": ">=0.7",
     "simpledb": ">=0.0.6",
-    "uglify-js": ">=1.0",
-    "cssom": ">=0.2",
-    "mime": ">=1.2"
+    "browserify": ">=1.4"
   },
   "private": true
 }

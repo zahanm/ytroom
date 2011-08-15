@@ -1,7 +1,6 @@
 
 var path = require('path'),
-    express = require('express'),
-    static_require = require('./require');
+    express = require('express');
 //    io = require('socket.io');
 
 var server = express.createServer();
@@ -12,15 +11,20 @@ server.configure(function() {
   server.use(express.methodOverride());
   server.use(server.router);
   server.use(express.static(path.resolve(__dirname,'../client')));
+  server.use(require('browserify')({
+    require: path.resolve(__dirname,'../client/uki'),
+    entry: path.resolve(__dirname,'../client/index.js'),
+    watch: true
+  }));
 });
 
 server.configure('dev', function() {
   server.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 });
 
-server.get('/*.js', static_require.getHandler({
-  searchPaths: [ path.resolve(__dirname,'../client') ]
-}));
+// server.get('/*.js', static_require.getHandler({
+//   searchPaths: [ path.resolve(__dirname,'../client') ]
+// }));
 
 server.listen(8080);
 

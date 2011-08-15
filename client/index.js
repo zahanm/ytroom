@@ -1,4 +1,4 @@
-
+requireCss = requireText = function() { return true; };
 var dom = require('./extlib/uki-core/dom'),
     find  = require("./extlib/uki-core/selector").find,
     builder = require('./extlib/uki-core/builder').build,
