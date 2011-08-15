@@ -6,7 +6,7 @@ var cssloader = require('./lib/cssloader'),
     builder = require('./extlib/uki-core/builder').build,
 
     views = require('./view/views'),
-
+    
     constants = require('./secure/constants'),
     ytdata = require('./lib/ytdata'),
     ytplayer = require('./lib/ytplayer');
@@ -23,6 +23,7 @@ var cssloader = require('./lib/cssloader'),
   FB.getLoginStatus(function(r) {
     if (r.authResponse || r.session) {
       startApp();
+      handleMessages();
     } else {
       location.href = './login.html';
     }
@@ -48,4 +49,31 @@ window.startApp = function() {
 window.onYouTubePlayerReady = function() {
   var player = document.getElementById('ytplayer');
   player && player.pauseVideo();
+};
+
+window.handleMessages=function(){
+  var socket = io.connect('http://localhost:8080');
+  socket.on('startup', function (data) {
+    console.log('Startup message from server',data);
+    socket.emit('startupack', 'hello from client');
+  });
+  
+  var regbutton = document.createElement('button');
+  regbutton.innerHTML = 'Register';
+  regbutton.style.cssText = 'position: absolute; right: 10px; top:1px';
+  document.body.appendChild(regbutton);
+  regbutton.onclick = function() {
+    console.log('Clicked Register');
+    socket.emit('regmsg','Register Client');
+  };
+  
+  var playbutton = document.createElement('button');
+  playbutton.innerHTML = 'Play';
+  playbutton.style.cssText = 'position: absolute; right: 10px; top:20px';
+  document.body.appendChild(playbutton);
+  playbutton.onclick = function() {
+    console.log('Clicked Play');
+    socket.emit('playmsg','Play Selected Song - Client');
+  };
+
 };
