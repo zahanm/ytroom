@@ -1,4 +1,4 @@
-requireCss('./text/text.css');
+requireCss(__dirname, './text/text.css');
 
 var fun  = require('../../uki-core/function'),
     dom  = require('../../uki-core/dom'),

@@ -1,4 +1,4 @@
-requireCss('./dataTable/dataTable.css');
+requireCss(__dirname, './dataTable/dataTable.css');
 
 var fun   = require('../../uki-core/function'),
     utils = require('../../uki-core/utils'),

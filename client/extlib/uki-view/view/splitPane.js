@@ -1,4 +1,4 @@
-requireCss('./splitPane/splitPane.css');
+requireCss(__dirname, './splitPane/splitPane.css');
 
 var fun   = require('../../uki-core/function'),
     utils = require('../../uki-core/utils'),
