@@ -3,8 +3,8 @@ var path = require('path'),
     express = require('express');
 
 var server = express.createServer();
-    io = require('socket.io').listen(server);
-    
+var io = require('socket.io').listen(server);
+
 server.configure(function() {
   // server.use(express.logger());
   server.use(express.bodyParser());
@@ -25,18 +25,18 @@ server.configure('dev', function() {
 server.listen(8080);
 io.sockets.on('connection', function (socket) {
   socket.emit('startup','hello from SFTO');
-  
+
   socket.on('startupack',function (data) {
     console.log('#ACK MSG',data);
   });
-  
+
   socket.on('regmsg', function (data) {
     console.log('#Register message from client ',data);
   });
-  
+
   socket.on('playmsg', function (data) {
     console.log('#Play message from client ',data);
   });
-  });
-  
+});
+
 console.log('Listening at http://localhost:8080/');

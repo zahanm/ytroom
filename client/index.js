@@ -6,7 +6,7 @@ var cssloader = require('./lib/cssloader'),
     builder = require('./extlib/uki-core/builder').build,
 
     views = require('./view/views'),
-    
+
     constants = require('./secure/constants'),
     ytdata = require('./lib/ytdata'),
     ytplayer = require('./lib/ytplayer');
@@ -57,7 +57,7 @@ window.handleMessages=function(){
     console.log('Startup message from server',data);
     socket.emit('startupack', 'hello from client');
   });
-  
+
   var regbutton = document.createElement('button');
   regbutton.innerHTML = 'Register';
   regbutton.style.cssText = 'position: absolute; right: 10px; top:1px';
@@ -66,7 +66,7 @@ window.handleMessages=function(){
     console.log('Clicked Register');
     socket.emit('regmsg','Register Client');
   };
-  
+
   var playbutton = document.createElement('button');
   playbutton.innerHTML = 'Play';
   playbutton.style.cssText = 'position: absolute; right: 10px; top:20px';
